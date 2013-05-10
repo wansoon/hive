@@ -72,7 +72,7 @@ POST    /:user/:project/post/:id/edit                   controllers.BoardApp.edi
 GET     /:user/:project/post/:id/comment/:commentId/delete     controllers.BoardApp.deleteComment(user, project, id:Long, commentId:Long)
 
 # Tags
-GET    /tags                                            controllers.TagApp.tags(query: String ?= "")
+GET    /tags                                            controllers.TagApp.tags(query: String ?= "", context: String ?= "", limit: Integer ?= null)
 GET    /:user/:project/tags                             controllers.ProjectApp.tags(user, project)
 POST   /:user/:project/tags                             controllers.ProjectApp.tag(user, project)
 POST   /:user/:project/tags/:id                         controllers.ProjectApp.untag(user, project, id: Long)
@@ -93,7 +93,7 @@ GET     /:user/:project/member/:id/delete               controllers.ProjectApp.d
 
 # Milestones
 GET     /:user/:project/milestones                      controllers.MilestoneApp.milestones(user, project)
-GET     /:user/:project/milestones/manage               controllers.MilestoneApp.manageMilestones(user, project)
+#GET     /:user/:project/milestones/manage               controllers.MilestoneApp.manageMilestones(user, project)
 GET     /:user/:project/newMilestoneForm                controllers.MilestoneApp.newMilestoneForm(user, project)
 POST    /:user/:project/milestones                      controllers.MilestoneApp.newMilestone(user, project)
 GET     /:user/:project/milestone/:id/editform          controllers.MilestoneApp.editMilestoneForm(user, project, id: Long)
